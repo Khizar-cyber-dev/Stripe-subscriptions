@@ -4,7 +4,6 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import TanStackProvider from '@/components/providers/TanStackProvider'
 import { Navbar } from '@/components/Navbar'
 
@@ -32,12 +31,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
 					<TanStackProvider>
 						<Navbar />
 						{children}
 					</TanStackProvider>
-				</ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
